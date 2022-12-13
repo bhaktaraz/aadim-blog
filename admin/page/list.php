@@ -14,6 +14,7 @@ $result = $conn->query($sql);
             <th>ID</th>
             <th>Title</th>
             <th>Publish</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,9 @@ $result = $conn->query($sql);
                 <td><?php echo $row['id'] ?></td>
                 <td><?php echo $row['title'] ?></td>
                 <td><?php echo $row['publish'] ? 'YES': 'NO' ?></td>
+                <td>
+                    <a href="delete.php?id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
             </tr>
         <?php
             }

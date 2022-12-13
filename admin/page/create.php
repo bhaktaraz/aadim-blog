@@ -6,8 +6,10 @@ if(isset($_POST['submit'])) {
     $content = $_POST['content'];
     $publish = $_POST['publish'];
     $publish = $publish == 'on' ? true : false;
+    $date = date('Y-m-d H:i:s');  // 2022-12-13 07:45:24
 
-    $insertQuery = "INSERT INTO tbl_page (id, title, content, publish) VALUES (5, '$title', '$content', '$publish')";
+    $insertQuery = "INSERT INTO tbl_page (title, content, publish, created_date, updated_date) 
+    VALUES ('$title', '$content', '$publish', '$date', '$date')";
     $result = $conn->query($insertQuery);
 
     if($conn->insert_id){
@@ -15,6 +17,8 @@ if(isset($_POST['submit'])) {
     }else{
         echo $conn->error;
     }
+
+    header('Location:list.php'); // Redirect to page list
 }
 ?>
 
