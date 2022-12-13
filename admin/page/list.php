@@ -7,6 +7,7 @@ $sql = "SELECT id, title, publish FROM tbl_page";
 $result = $conn->query($sql);
 ?>
 
+<a href="create.php">New Article</a>
 <table>
     <thead>
         <tr>
