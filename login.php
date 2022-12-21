@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
     if ($result->num_rows == 1) {
         header('Location:admin/dashboard.php');
     }else{
-        header('Location:list.php');
+        header('Location:login.php');
     }
 }
 ?>
