@@ -4,8 +4,7 @@ include("../../db.php");
 if(isset($_POST['submit'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $publish = $_POST['publish'];
-    $publish = $publish == 'on' ? true : false;
+    $publish = isset($_POST['publish']) ? 1 : 0;
     $date = date('Y-m-d H:i:s');  // 2022-12-13 07:45:24
 
     $insertQuery = "INSERT INTO tbl_page (title, content, publish, created_date, updated_date) 
