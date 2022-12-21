@@ -27,6 +27,7 @@ $result = $conn->query($sql);
                 <td><?php echo $row['title'] ?></td>
                 <td><?php echo $row['publish'] ? 'YES': 'NO' ?></td>
                 <td>
+                    <a href="edit.php?id=<?php echo $row['id'] ?>">Edit</a>
                     <a href="delete.php?id=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
