@@ -1,4 +1,5 @@
 <?php
+include('db.php');
 include('common/header.php');
 
 $page = $_GET['page'];
