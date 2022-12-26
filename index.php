@@ -1,4 +1,21 @@
-<a href="login.php">Login</a>
-
 <?php
-echo "Hello World";
+include('common/header.php');
+
+$page = $_GET['page'];
+
+switch ($page){
+    case 'home':
+        include("home.php");
+        break;
+    case 'about':
+        include("about.php");
+        break;
+    case 'contact':
+        include("contact.php");
+        break;
+    default:
+        include("home.php");
+}
+
+include('common/footer.php');
+?>
