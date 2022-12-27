@@ -1,5 +1,4 @@
 <?php
-include("../../db.php");
 $id = $_GET['id'];
 if (isset($_POST['submit'])) {
     $title = $_POST['title'];
@@ -20,7 +19,7 @@ if (isset($_POST['submit'])) {
         echo $conn->error;
     }
 
-    header('Location:list.php'); // Redirect to page list
+    header('Location:?page=pages&action=list'); // Redirect to page list
 }
 
 $sql = "SELECT id, title, content, publish FROM tbl_page WHERE id = $id";
@@ -28,15 +27,27 @@ $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 ?>
 
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Edit Page</h1>
+</div>
+
 <form method="post" action="">
-    <label>Title</label>
-    <input type="text" name="title" value="<?php echo $row['title']; ?>"/>
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" required name="title" value="<?php echo $row['title']; ?>"/>
+    </div>
 
-    <label>Content</label>
-    <textarea name="content"><?php echo $row['content']; ?></textarea>
+    <div class="form-group">
+        <label>Content</label>
+        <textarea class="form-control" required name="content"><?php echo $row['content']; ?></textarea>
+    </div>
 
-    <label>Publish</label>
-    <input type="checkbox" name="publish" <?php echo $row['publish'] == 1 ? 'checked' : '' ?> />
+    <div class="form-group">
+        <label>Publish</label>
+        <input type="checkbox" name="publish" <?php echo $row['publish'] == 1 ? 'checked' : '' ?> />
+    </div>
 
-    <input type="submit" name="submit" value="Save"/>
+    <div class="form-group">
+        <input type="submit" name="submit" value="Save" class="btn btn-primary"/>
+    </div>
 </form>

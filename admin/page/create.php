@@ -17,19 +17,31 @@ if(isset($_POST['submit'])) {
         echo $conn->error;
     }
 
-    header('Location:list.php'); // Redirect to page list
+    header('Location:?page=pages&action=list'); // Redirect to page list
 }
 ?>
 
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Create Page</h1>
+</div>
+
 <form method="post" action="">
-    <label>Title</label>
-    <input type="text" name="title" />
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" required />
+    </div>
 
-    <label>Content</label>
-    <textarea name="content"></textarea>
+    <div class="form-group">
+        <label>Content</label>
+        <textarea name="content" class="form-control" required></textarea>
+    </div>
 
-    <label>Publish</label>
-    <input type="checkbox" name="publish" />
+    <div class="form-group">
+        <label>Publish</label>
+        <input type="checkbox" name="publish" />
+    </div>
 
-    <input type="submit" name="submit" value="Save" />
+    <div class="form-group">
+        <input type="submit" name="submit" value="Save" class="btn btn-primary" />
+    </div>
 </form>

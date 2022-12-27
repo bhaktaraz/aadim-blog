@@ -6,4 +6,4 @@ $id = $_GET['id'];
 $deleteQuery = "DELETE FROM tbl_page WHERE id = $id";
 $conn->query($deleteQuery);
 
-header('Location:list.php');
+header('Location:?page=pages&action=list');
