@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['email'])){
+    header('Location:../login.php');
+}
+
 include('../db.php');
 ?>
 <!doctype html>
@@ -43,6 +49,9 @@ include('../db.php');
                     }else{
                         include('page/list.php');
                     }
+                    break;
+                case 'logout':
+                    include("logout.php");
                     break;
                 default:
                     include('dashboard.php');

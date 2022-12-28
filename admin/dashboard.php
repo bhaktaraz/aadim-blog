@@ -2,3 +2,6 @@
     <h1 class="h2">Dashboard</h1>
 </div>
 
+<?php
+echo 'Hi, '.$_SESSION['email'];
+?>

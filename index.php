@@ -14,6 +14,9 @@ switch ($page){
     case 'contact':
         include("contact.php");
         break;
+    case 'login':
+        include("login.php");
+        break;
     default:
         include("home.php");
 }
