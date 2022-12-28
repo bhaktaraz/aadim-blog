@@ -4,7 +4,7 @@ include("db.php");
 
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
 
     $sql = "SELECT id, email, password FROM tbl_student WHERE email = '$email' AND password = '$password'";
     $result = $conn->query($sql);
