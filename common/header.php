@@ -1,3 +1,6 @@
+<?php
+use Carbon\Carbon;
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -53,6 +56,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?page=login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><?php echo Carbon::now(); ?></a>
                     </li>
                 </ul>
                 <form class="d-flex">

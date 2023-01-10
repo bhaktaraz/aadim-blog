@@ -1,0 +1,11 @@
+{
+    "require": {
+        "nesbot/carbon": "^2.65",
+        "bhaktaraz/php-rss-generator": "dev-master"
+    },
+    "config": {
+        "platform": {
+            "php": "8.0.22"
+        }
+    }
+}

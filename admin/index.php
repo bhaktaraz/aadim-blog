@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+ini_set('display_errors', 1);
+
 if(!isset($_SESSION['email'])){
     header('Location:../login.php');
 }
@@ -33,8 +35,8 @@ include('../db.php');
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <?php
             // Dynamic page load
-            $page = $_GET['page'];
-            $action = $_GET['action'];
+            $page = $_GET['page'] ?? '';
+            $action = $_GET['action'] ?? '';
 
             switch ($page){
                 case 'pages':

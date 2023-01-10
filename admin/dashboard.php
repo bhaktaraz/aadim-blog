@@ -3,5 +3,11 @@
 </div>
 
 <?php
-echo 'Hi, '.$_SESSION['email'];
+echo 'Hi, '.$_SESSION['email'].PHP_EOL;
+
+require '../vendor/autoload.php';
+
+use Carbon\Carbon;
+
+printf("Now: %s", Carbon::now());
 ?>
